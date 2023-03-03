@@ -179,7 +179,10 @@ console.log(manav);
 
 
 /* 	GÖREV 4:
-		Yeni kurulmuş bir mesajlaşma startup firması atılan mesajları emojilerle zenginleştirmek istiyor. Bunun için emojiler adında bir nesne tanımlamışlar. Kullanıcının gönderdiği mesaj stringi içinde emojiler nesnesinin anahtarı(index) bulunuyorsa, bu işareti otomatik olarak anahtara ait değerde tanımlanmış emoji ile değiştirecek bir fonksiyon geliştirmek istiyorlar. ÖRNEK: Mesaj içinde ":)" sembolü bulunursa mesajı alan kişi bu sembolü "🙂" olarak görecek. Burdan yola çıkarak emojileriDonustur fonksiyonuna aşağıdakileri uygulayın.
+		Yeni kurulmuş bir mesajlaşma startup firması atılan mesajları emojilerle zenginleştirmek istiyor. Bunun için emojiler adında bir nesne tanımlamışlar. 
+		Kullanıcının gönderdiği mesaj stringi içinde emojiler nesnesinin anahtarı(index) bulunuyorsa, bu işareti otomatik olarak anahtara ait değerde tanımlanmış 
+		emoji ile değiştirecek bir fonksiyon geliştirmek istiyorlar. ÖRNEK: Mesaj içinde ":)" sembolü bulunursa mesajı alan kişi bu sembolü "🙂" olarak görecek.
+		 Burdan yola çıkarak emojileriDonustur fonksiyonuna aşağıdakileri uygulayın.
 			1. Atılan mesaj stringi fonksiyonun birinci parametresi olarak alınacak
 			2. emojiler nesnesi fonksiyonun ikinci parametresi olarak alınacak
 			3. mesaj stringi emoji nesnesinde tanımlı olan tüm sembolleri istenilen değere dönüştürecek (.replaceAll metodu kullanılacak)
@@ -188,12 +191,15 @@ console.log(manav);
 			4. elde edilen string döndürülecek
  */
 
-function emojileriDonustur(/* kodlar buraya */){
-/* kodlar buraya */
-
+function emojileriDonustur(mesaj, emojiler){
+for (let key in emojiler){
+    mesaj = mesaj.replaceAll(key.toUpperCase(), emojiler[key]);
+	mesaj = mesaj.replaceAll(key.toLowerCase(), emojiler[key]);
+}
+return mesaj;
 }
 
-
+console.log(emojileriDonustur("selam", ":d"));
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 function sa(){
