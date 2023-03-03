@@ -62,7 +62,9 @@ var cumleler = [
 		function foo(degisken=false){
 		return degisken;
 		}
-		Yukarıdaki fonksiyonu foo("deneme") olarak çağırabiliriz, bu fonksiyon "deneme" stringini döndürecektir. Aynı fonksiyonu foo(); şeklinde de çağırabiliriz. Bu durumda parametre olarak bir şey göndermediğimiz için fonksiyon içindeki degisken değişkenine false değeri atanacaktır. Bu durumda foo(); fonksiyonunu çalıştırdığımız false döndürür.
+		Yukarıdaki fonksiyonu foo("deneme") olarak çağırabiliriz, bu fonksiyon "deneme" stringini döndürecektir. Aynı fonksiyonu foo(); şeklinde de çağırabiliriz. 
+		Bu durumda parametre olarak bir şey göndermediğimiz için fonksiyon içindeki degisken değişkenine false değeri atanacaktır. Bu durumda foo(); fonksiyonunu 
+		çalıştırdığımız false döndürür.
 		)
 		3. Alınan 5 string uc uca eklenerek bir stringe dönüştürülecektir.
 		4. Fonksiyon, oluşturulan stringi döndürecektir. 
@@ -75,12 +77,12 @@ function cumleKur(birinci, ikinci="", ucuncu="", dorduncu="", besinci=""){
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 1 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
 
-
+console.log(cumleKur("Hello World!"));
 
 
 /* (Oto test yok) cumleKur fonksiyonuna yalnızca 2 parametre göndererek "Hello World!" stringini elde edin, sonucu konsolde gözlemleyin */
 
-
+console.log(cumleKur("Hello"," World!"));
 
 
 /* (Oto test var) cumleKur fonksiyonuna 5 parametre göndererek "Ben iyi bir yazılımcı olacağım!" stringini elde edin, sonucu `bircumle` değişkenine atayın ve konsolde gözlemleyin */
@@ -88,27 +90,31 @@ var bircumle;
 
 /* kodlar buraya */
 
-
+bircumle = cumleKur("Ben", " iyi", " bir", " yazılımcı", " olacağım!");
+console.log(bircumle);
 
 //		Sayfanın en üstünde global olarak tanımlanmış `cumleler` adında bir dizi bulunmaktadır. Bu dizinin içinde en çok 5 en az 1 adet string bulunan diziler bulunmaktadır. Aşağıdaki görevlerde aksi belirtilmedikçe bu dizi kullanılacaktır.
 
 /* 	GÖREV 1:
 		cumlelereDonustur fonksiyonuna aşağıdaki yönergeleri uygulayın.
 			1. `cumleler` adındaki dizi fonksiyonun BİRİNCİ parametresi olarak alınacak.
-			2. Kelime aralarındaki ayraç(seperator) olarak kullanılmak üzere bir string değişkeni fonksiyonun İKİNCİ parametresi olarak alınacak. Ayraç parametresine "," değerini ön tanımlı yapmanız beklenmektedir.
+			2. Kelime aralarındaki ayraç(seperator) olarak kullanılmak üzere bir string değişkeni fonksiyonun İKİNCİ 
+			parametresi olarak alınacak. Ayraç parametresine "," değerini ön tanımlı yapmanız beklenmektedir.
 			3. Dizinin içindeki her dizi elemanı 1 cümle oluşturacak şekilde uc uca eklenecek, kelimelerin aralarına 3. parametrede girilen ayraç yerleştirilecek;
-				NOT: cumlelereDonustur(cumleler, " ") fonksiyonu çağırıldığında şu dizinin oluşturacağı cümle: ["Annem","ekmek","almak","için","gitti."] => "Annem ekmek almak için gitti." şeklinde olmalıdır. 
+				NOT: cumlelereDonustur(cumleler, " ") fonksiyonu çağırıldığında şu dizinin oluşturacağı 
+				cümle: ["Annem","ekmek","almak","için","gitti."] => "Annem ekmek almak için gitti." şeklinde olmalıdır. 
 				💡 İPUCU: Bu çalışmada cümleleri kolay oluşturmak için .map ve .join metodunu bir arada kullanmanız gerekmektedir. 
 			4. Oluşturulan her cümle yeni bir dizi oluşturulup o dizinin içine aktarılacak. 
 			5. Oluşturulan yeni dizi döndürülecek.
 	*/
 	
 
-function cumlelereDonustur(/* kodlar buraya */ ){
-	/* kodlar buraya */
+function cumlelereDonustur(cumleler, seperator = "," ){
+	let yeniDizi = cumleler.map((item) => item.join(seperator));
+	return yeniDizi;
 }
 
-
+console.log(cumlelereDonustur(cumleler, " "));
 
 /* GÖREV 2:
 		paragrafOlustur fonksiyonuna aşağıdakileri uygulayın.
